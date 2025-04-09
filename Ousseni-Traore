@@ -1,6 +1,6 @@
 // Author: Ousseni TRAORE
 //Date: 7/6/2022
-// Description: The time complexity of above algo.is O(n^3). It only prints the shortest distance. Here we are using dynamic programming to find the shortest paths. Space complexity here is O(n^2). Floyd-Warshall Algorithm is a calculation for finding the most limited way between all the sets of vertices in a weighted chart. This calculation works for both the directed and undirected weighted charts. In any case, it doesn't work for the charts with negative cycles (where the amount of the edges in a cycle is negative).
+// Description: The time complexity of above algo.is O(n^3). It only prints the shortest distance. Here I am using dynamic programming to find the shortest paths. Space complexity here is O(n^2). Floyd-Warshall Algorithm is a calculation for finding the most limited way between all the sets of vertices in a weighted chart. This calculation works for both the directed and undirected weighted charts. In any case, it doesn't work for the charts with negative cycles (where the amount of the edges in a cycle is negative).
 // A weighted graph is a graph in which each edge has a related numerical value.
 
 
