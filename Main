@@ -1,0 +1,169 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Ousseni022422{
+
+private long id;
+private String name;
+private char division;
+private String city;
+private int semester;
+private int zipcode;
+private int finalMarks;
+private boolean isPassed;
+private boolean isRegularStudent;
+private boolean isFeePaid;
+
+public long getId() {
+return id;
+}
+
+public void setId(long id) {
+this.id = id;
+}
+
+public String getName() {
+return name;
+}
+
+public void setName(String name) {
+this.name = name;
+}
+
+public char getDivision() {
+return division;
+}
+
+public void setDivision(char division) {
+this.division = division;
+}
+
+public String getCity() {
+return city;
+}
+
+public void setCity(String city) {
+this.city = city;
+}
+
+public int getSemester() {
+return semester;
+}
+
+public void setSemester(int semester) {
+this.semester = semester;
+}
+
+public int getZipcode() {
+return zipcode;
+}
+
+public void setZipcode(int zipcode) {
+this.zipcode = zipcode;
+}
+
+public int getFinalMarks() {
+return finalMarks;
+}
+
+public void setFinalMarks(int finalMarks) {
+this.finalMarks = finalMarks;
+}
+
+public boolean isPassed() {
+return isPassed;
+}
+
+public void setPassed(boolean passed) {
+isPassed = passed;
+}
+
+public boolean isRegularStudent() {
+return isRegularStudent;
+}
+
+public void setRegularStudent(boolean regularStudent) {
+isRegularStudent = regularStudent;
+}
+
+public boolean isFeePaid() {
+return isFeePaid;
+}
+
+public void setFeePaid(boolean feePaid) {
+isFeePaid = feePaid;
+}
+
+public Ousseni022422(long id, String name, char division, String city, int semester, int zipcode, int finalMarks, boolean isPassed, boolean isRegularStudent, boolean isFeePaid) {
+this.id = id;
+this.name = name;
+this.division = division;
+this.city = city;
+this.semester = semester;
+this.zipcode = zipcode;
+this.finalMarks = finalMarks;
+this.isPassed = isPassed;
+this.isRegularStudent = isRegularStudent;
+this.isFeePaid = isFeePaid;
+}
+
+public Ousseni022422() {
+
+}
+
+@Override
+public String toString() {
+return "Student{" +
+"id=" + id +
+", name='" + name + '\'' +
+", division=" + division +
+", city='" + city + '\'' +
+", semester=" + semester +
+", zipcode=" + zipcode +
+", finalMarks=" + finalMarks +
+", isPassed=" + isPassed +
+", isRegularStudent=" + isRegularStudent +
+", isFeePaid=" + isFeePaid +
+'}';
+}
+}
+
+public class Main{
+public static void main(String[] args){
+Student s1 = new Student(123,"John",'a',"London",4,123456,70,true,true,false);
+Student s2 = new Student(163,"Carlos",'s',"New York",1,15423456,10,false,true,false);
+Student s3 = new Student(127,"Peter",'d',"Paris",2,123546,20,false,true,true);
+Student s4 = new Student(121,"Xack",'e',"Dubai",4,122256,40,true,true,false);
+Student s5 = new Student(144,"Rob",'d',"Mumbai",5,154456,50,true,true,true);
+
+List<Student> students = new ArrayList<>();
+students.add(s1);
+students.add(s2);
+students.add(s3);
+students.add(s4);
+students.add(s5);
+
+List<Student> passedStudents = new ArrayList<>();
+List<Student> failedStudents = new ArrayList<>();
+List<Student> feeUnpaidStudents = new ArrayList<>();
+List<Student> regularStudents = new ArrayList<>();
+
+for(int i=0;i<students.size();i++){
+if(students.get(i).isPassed()){
+passedStudents.add(students.get(i));
+}
+if(!students.get(i).isPassed()){
+failedStudents.add(students.get(i));
+}
+if(!students.get(i).isFeePaid()){
+feeUnpaidStudents.add(students.get(i));
+}
+if(students.get(i).isRegularStudent()){
+regularStudents.add(students.get(i));
+}
+}
+
+System.out.println("Students are loaded into the respective lists");
+
+}
+}
