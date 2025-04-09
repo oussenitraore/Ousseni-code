@@ -1,0 +1,44 @@
+// Author: Ousseni TRRAORE
+//Date: 6/14/2022
+// Description: This a time complexity algorithm. The list is sorted via merge sort or quick sort. 
+//The first n/2 elements form the first subsist of the array.
+//The elements after the n/2 th position form the 2nd subsist
+//The time complexity of the algorithm depends on the sorting algorithm selected. If we select merge or quick sort the time complexity will be O(n log n).
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+  
+public class TRAORESortExample
+{
+public static void main(String[] args)
+{
+int n, sum1 = 0,sum2 = 0;
+Scanner s = new Scanner(System.in);
+System.out.print("Enter no. of elements you want in array:");
+n = s.nextInt();
+int a[] = new int[n];
+System.out.println("Enter all the elements:");
+for(int i = 0; i < n; i++)
+{
+a[i] = s.nextInt();
+}
+Arrays.sort(a);
+System.out.print("First sublist contain: {");
+for(int i = 0; i < n/2; i++)
+{
+sum1=sum1+a[i];
+System.out.print(a[i] + ",");
+}
+System.out.println("} with Sum:"+sum1);
+  
+System.out.print("Second sublist contain: {");
+for(int i = n/2; i < n; i++)
+{
+sum2=sum2+a[i];
+System.out.print(a[i] + ",");
+}
+System.out.println("} with Sum:"+sum2);
+
+}
+}
