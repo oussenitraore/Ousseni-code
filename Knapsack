@@ -1,0 +1,38 @@
+class TRAOREKnapsack
+{
+// Main method
+public static void main(String[] args)
+{
+int profits[] = {20,30,35,12,3};
+int weights[] = {2,5,7,3,1};
+int maxWeight = 9;
+// Function calling and printing output
+System.out.println("Profit: "+knapsack(profits, weights, maxWeight, 0));
+}
+
+// Method returns maximum of a and b
+public static int max(int a, int b)
+{
+return a>b?a:b;
+}
+
+// Knapsack method definition
+public static int knapsack(int profits[], int weights[], int maxWeight, int item)
+{
+// Base case
+if(maxWeight==0 || item==profits.length)
+{
+return 0;
+}
+// If maxWeight exceeded then don't include the weight
+if(weights[item]>maxWeight)
+{
+return knapsack(profits, weights, maxWeight, item+1);
+}
+// Find profit by excluding weight and by including weight
+int includeW = knapsack(profits, weights, maxWeight-weights[item], item+1) + profits[item];
+int excludeW = knapsack(profits, weights, maxWeight, item+1);
+// Return maxmium among above results
+return max(includeW, excludeW);
+}
+}
